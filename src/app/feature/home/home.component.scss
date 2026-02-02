@@ -1,0 +1,50 @@
+.home-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    margin-bottom: .5rem;
+  }
+
+  p {
+    color: var(--text-color-secondary);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.despensas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.despensa-card {
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .1);
+  }
+
+  .totales {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    small {
+      color: var(--text-color-secondary);
+    }
+  }
+}

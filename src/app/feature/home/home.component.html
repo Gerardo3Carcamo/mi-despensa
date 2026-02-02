@@ -1,0 +1,50 @@
+<div class="home-container">
+
+  <div class="home-header">
+    <h1>🛒 Mi Despensa</h1>
+    <p>Organiza y controla tus gastos fácilmente</p>
+  </div>
+
+  <div class="actions">
+    <button
+      pButton
+      icon="pi pi-plus"
+      label="Nueva despensa"
+      class="p-button-lg p-button-success"
+      (click)="nuevaDespensa()">
+    </button>
+  </div>
+
+  <div class="despensas">
+    <p-card
+      *ngFor="let d of despensas"
+      class="despensa-card"
+      (click)="abrirDespensa(d.id)">
+
+      <ng-template pTemplate="title">
+        {{ d.nombre }}
+      </ng-template>
+
+      <ng-template pTemplate="subtitle">
+        <p-tag
+          [value]="d.estado"
+          [severity]="d.estado === 'Abierta' ? 'info' : 'success'">
+        </p-tag>
+      </ng-template>
+
+      <div class="totales">
+        <div>
+          <small>Esperado</small>
+          <strong>${{ d.totalEstimado }}</strong>
+        </div>
+
+        <div *ngIf="d.totalReal !== null">
+          <small>Real</small>
+          <strong>${{ d.totalReal }}</strong>
+        </div>
+      </div>
+
+    </p-card>
+  </div>
+
+</div>
