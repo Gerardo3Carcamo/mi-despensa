@@ -1,0 +1,8 @@
+<p-card header="Tiendas">
+    @for (s of stores; track $index) {
+    <div>{{ s.name }}</div>
+    <input pInputText [(ngModel)]="name" placeholder="Nueva tienda">
+    <button pButton label="Agregar" (click)="add()"></button>
+    }
+
+</p-card>

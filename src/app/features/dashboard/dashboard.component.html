@@ -1,0 +1,9 @@
+<div class="grid">
+  @for (c of cards; track $index) {
+  <div class="col-12 md:col-4">
+    <p-card [header]="c.title">
+      <h2>{{ c.value }}</h2>
+    </p-card>
+  </div>
+  }
+</div>
